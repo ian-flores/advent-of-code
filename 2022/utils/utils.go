@@ -1,9 +1,19 @@
-// Modified from: https://stackoverflow.com/a/52558340
-
 package utils
 
-import "container/heap"
+import (
+	"container/heap"
+	"log"
+)
 
+//////////////////// Error Handling ////////////////////
+func ErrorHandler(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+//////////////////// HEAPS ////////////////////
+// Modified from: https://stackoverflow.com/a/52558340
 func GetHeap(m map[string]int) *KVHeap {
 	h := &KVHeap{}
 	heap.Init(h)
